@@ -1,5 +1,6 @@
 package com.example.JavaReack.healthcare.model;
 
+import com.example.JavaReack.jugtours.model.User;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import java.util.Date;
 @Entity
 @Data
 @Table(name = "BLOOD_PRESURE_MSRMNT")
-public class BloodPressureMesurement {
+public class BloodPressureMeasurement {
 
     @Id
     @GeneratedValue
@@ -17,12 +18,13 @@ public class BloodPressureMesurement {
     @Column
     LocalDateTime measurementTime;
     @Column
-    String highPresure;
+    String highPressure;
     @Column
-    String lowPreasure;
+    String lowPressure;
     @Column
     String heartRate;
     @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "USERID")
     User user;
 
 }

@@ -26,6 +26,7 @@ public class Group {
     private String country;
     private String postalCode;
     @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "USERID")
     private User user;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
